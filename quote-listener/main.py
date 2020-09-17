@@ -1,10 +1,10 @@
 import praw
 
+sitename = "quotelistenerbot"
+
 if __name__ == '__main__':
 
-    reddit = praw.Reddit(client_id="my client id",
-                     client_secret="my client secret",
-                     user_agent="my user agent")
+    reddit = praw.Reddit(site_name=sitename)
 
     while True:
         for comment in reddit.subreddit("all").stream.comments(skip_existing=True):
